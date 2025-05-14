@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
 import {ConfirmationComponent} from "../../components/confirmation/confirmation.component";
 import {ProfileComponent} from "../../components/profile/profile.component";
-import {HeaderAcquirerComponent} from "../../../public/components/header-acquirer/header-acquirer.component";
 import {TranslateModule} from "@ngx-translate/core";
-import {UserService} from "../../../auth/services/user.service";
-import {HeaderComponent} from "../../../public/components/header/header.component";
+import {HeaderAcquirerComponent} from '../../../../public/components/header-acquirer/header-acquirer.component';
+import {HeaderComponent} from '../../../../public/components/header/header.component';
+import {UserService} from '../../../../auth/services/user.service';
 
 @Component({
   selector: 'app-edit-profile-acquirer',

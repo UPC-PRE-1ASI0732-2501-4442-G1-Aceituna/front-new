@@ -1,11 +1,11 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {ProfileComponent} from "../../components/profile/profile.component";
 import {ConfirmationComponent} from "../../components/confirmation/confirmation.component";
-import {HeaderComponent} from "../../../public/components/header/header.component";
 import {TranslateModule} from "@ngx-translate/core";
-import {UserService} from "../../../auth/services/user.service";
 import {ProfileApiService} from "../../services/profile-api.service";
 import {take} from "rxjs";
+import {HeaderComponent} from '../../../../public/components/header/header.component';
+import {UserService} from '../../../../auth/services/user.service';
 
 @Component({
   selector: 'app-profile-page',

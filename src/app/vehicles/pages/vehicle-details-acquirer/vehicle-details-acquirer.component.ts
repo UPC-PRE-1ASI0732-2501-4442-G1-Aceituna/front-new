@@ -5,11 +5,11 @@ import {NgIf, UpperCasePipe} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {Vehicle} from "../../model/vehicle.entity";
 import {VehicleService} from "../../services/vehicle.service";
-import {LogoApiService} from "../../../shared/services/logo-api.service";
 import {HeaderAcquirerComponent} from "../../../public/components/header-acquirer/header-acquirer.component";
 import {HeaderComponent} from "../../../public/components/header/header.component";
 import {TranslateModule} from "@ngx-translate/core";
 import {ActivatedRoute} from "@angular/router";
+import {LogoApiService} from '../../../../shared/services/logo-api.service';
 
 @Component({
   selector: 'app-vehicle-details-acquirer',
@@ -31,7 +31,7 @@ import {ActivatedRoute} from "@angular/router";
 export class VehicleDetailsAcquirerComponent implements OnInit{
   protected vehicleData: Vehicle | null = null;
   private vehicleService: VehicleService = inject(VehicleService);
-  private route = inject(ActivatedRoute); // ✅ inject aquí también
+  private route = inject(ActivatedRoute);
   private Logo = inject(LogoApiService);
   value?: number;
 
@@ -44,7 +44,7 @@ export class VehicleDetailsAcquirerComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    const idParam = this.route.snapshot.paramMap.get('id'); // 👈 captura de la ruta
+    const idParam = this.route.snapshot.paramMap.get('id');
     const id = idParam ? +idParam : null;
 
     if (id) {

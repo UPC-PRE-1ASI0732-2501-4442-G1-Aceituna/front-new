@@ -3,12 +3,12 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgIf, UpperCasePipe} from "@angular/common";
 import {Vehicle} from "../../model/vehicle.entity";
 import { VehicleService } from '../../services/vehicle.service';
-import {LogoApiService} from "../../../shared/services/logo-api.service";
 import {MatCardImage} from "@angular/material/card";
 import {RatingModule} from "primeng/rating";
 import {HeaderComponent} from "../../../public/components/header/header.component";
 import {TranslateModule} from "@ngx-translate/core";
 import {HeaderAcquirerComponent} from "../../../public/components/header-acquirer/header-acquirer.component";
+import {LogoApiService} from '../../../../shared/services/logo-api.service';
 
 @Component({
   selector: 'app-vehicle-details',

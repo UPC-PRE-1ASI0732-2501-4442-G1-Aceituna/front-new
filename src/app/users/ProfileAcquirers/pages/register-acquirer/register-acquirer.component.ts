@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {TranslateModule} from "@ngx-translate/core";
-import {AuthenticationService} from "../../../auth/services/authentication.service";
-import {SignUpRequest} from "../../../auth/model/sign-up.request";
 import {FormsModule} from "@angular/forms";
 import {ProfileAccountService} from "../../services/profile-account.service";
 import {NgIf} from "@angular/common";
+import {AuthenticationService} from '../../../../auth/services/authentication.service';
+import {SignUpRequest} from '../../../../auth/model/sign-up.request';
 
 @Component({
   selector: 'app-register-acquirer',

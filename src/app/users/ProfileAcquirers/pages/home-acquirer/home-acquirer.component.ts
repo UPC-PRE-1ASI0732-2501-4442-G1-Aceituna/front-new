@@ -1,13 +1,13 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {HeaderComponent} from "../../../public/components/header/header.component";
 import {MatCardImage} from "@angular/material/card";
 import {NgForOf} from "@angular/common";
-import {LogoApiService} from "../../../shared/services/logo-api.service";
 import {RouterLink} from "@angular/router";
-import {VehicleService} from "../../../movilizing/services/vehicle.service";
-import {Vehicle} from "../../../movilizing/model/vehicle.entity";
-import {HeaderAcquirerComponent} from "../../../public/components/header-acquirer/header-acquirer.component";
 import {TranslateModule} from "@ngx-translate/core";
+import {HeaderAcquirerComponent} from '../../../../public/components/header-acquirer/header-acquirer.component';
+import {HeaderComponent} from '../../../../public/components/header/header.component';
+import {Vehicle} from '../../../../vehicles/model/vehicle.entity';
+import {VehicleService} from '../../../../vehicles/services/vehicle.service';
+import {LogoApiService} from '../../../../../shared/services/logo-api.service';
 
 
 @Component({
@@ -44,7 +44,7 @@ export class HomeAcquirerComponent implements OnInit{
 
   private getAllVehicles() {
     this.vehicleService.getAll().subscribe((response: any[]) => {
-      console.log('🚗 Vehículos cargados:', response);
+      console.log('Vehículos cargados:', response);
       this.vehicleData = response.map(v => new Vehicle(v)); // <-- Esto lo arregla
     });
   }
