@@ -1,12 +1,11 @@
 import {Component, inject, OnInit, ViewChild} from '@angular/core';
-import {Profile} from "../../../ProfileAcquirers/model/profile";
-import {ProfileApiService} from "../../../ProfileAcquirers/services/profile-api.service";
-import {ProfileComponent} from "../../../ProfileAcquirers/components/profile/profile.component";
-import {ConfirmationComponent} from "../../../ProfileAcquirers/components/confirmation/confirmation.component";
 import {UserService} from "../../../auth/services/user.service";
 import {User} from "../../../auth/model/user.entity";
 import {HeaderComponent} from "../../components/header/header.component";
 import {take} from "rxjs";
+import {ConfirmationComponent} from '../../../users/ProfileAcquirers/components/confirmation/confirmation.component';
+import {ProfileApiService} from '../../../users/ProfileAcquirers/services/profile-api.service';
+import {ProfileComponent} from '../../../users/ProfileAcquirers/components/profile/profile.component';
 
 @Component({
   selector: 'app-profile-page',

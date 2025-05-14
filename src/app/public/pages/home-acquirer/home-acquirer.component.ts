@@ -4,9 +4,9 @@ import {MatCardImage} from "@angular/material/card";
 import {NgForOf} from "@angular/common";
 import {LogoApiService} from "../../../shared/services/logo-api.service";
 import {RouterLink} from "@angular/router";
-import {VehicleService} from "../../../movilizing/services/vehicle.service";
-import {Vehicle} from "../../../movilizing/model/vehicle.entity";
 import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
+import {Vehicle} from '../../../vehicles/model/vehicle.entity';
+import {VehicleService} from '../../../vehicles/services/vehicle.service';
 
 @Component({
   selector: 'app-home-acquirer',

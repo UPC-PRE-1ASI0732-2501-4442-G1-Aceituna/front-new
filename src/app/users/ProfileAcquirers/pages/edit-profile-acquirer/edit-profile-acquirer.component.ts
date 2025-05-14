@@ -3,7 +3,6 @@ import {ConfirmationComponent} from "../../components/confirmation/confirmation.
 import {ProfileComponent} from "../../components/profile/profile.component";
 import {TranslateModule} from "@ngx-translate/core";
 import {HeaderAcquirerComponent} from '../../../../public/components/header-acquirer/header-acquirer.component';
-import {HeaderComponent} from '../../../../public/components/header/header.component';
 import {UserService} from '../../../../auth/services/user.service';
 
 @Component({
@@ -13,8 +12,7 @@ import {UserService} from '../../../../auth/services/user.service';
     ConfirmationComponent,
     ProfileComponent,
     TranslateModule,
-    HeaderAcquirerComponent,
-    HeaderComponent
+    HeaderAcquirerComponent
   ],
   templateUrl: './edit-profile-acquirer.component.html',
   styleUrl: './edit-profile-acquirer.component.css'

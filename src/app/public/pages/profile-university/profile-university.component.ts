@@ -9,8 +9,8 @@ import {HeaderComponent} from "../../components/header/header.component";
 import {TranslateModule} from "@ngx-translate/core";
 import {UserService} from "../../../auth/services/user.service";
 import {AuthenticationService} from "../../../auth/services/authentication.service";
-import {ProfileApiService} from "../../../ProfileAcquirers/services/profile-api.service";
 import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
+import {ProfileApiService} from '../../../users/ProfileAcquirers/services/profile-api.service';
 
 @Component({
   selector: 'app-profile-university',

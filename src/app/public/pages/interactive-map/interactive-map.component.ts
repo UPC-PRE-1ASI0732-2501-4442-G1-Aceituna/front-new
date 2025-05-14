@@ -2,10 +2,10 @@ import {Component, inject, OnInit} from '@angular/core';
 import {GoogleMap, MapMarker} from "@angular/google-maps";
 import {Router} from "@angular/router";
 import {NgForOf} from "@angular/common";
-import {VehicleService} from "../../../movilizing/services/vehicle.service";
-import {Vehicle} from "../../../movilizing/model/vehicle.entity";
 import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
 import {TranslateModule} from "@ngx-translate/core";
+import {Vehicle} from '../../../vehicles/model/vehicle.entity';
+import {VehicleService} from '../../../vehicles/services/vehicle.service';
 
 @Component({
   selector: 'app-interactive-map',

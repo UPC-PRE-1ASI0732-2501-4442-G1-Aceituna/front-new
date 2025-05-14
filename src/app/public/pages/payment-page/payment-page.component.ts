@@ -1,8 +1,8 @@
 import {Component, inject} from '@angular/core';
-import {PaymentComponent} from "../../../SelectionPlanes/components/payment/payment.component";
-import {PlanListComponent} from "../../../SelectionPlanes/components/plan-list/plan-list.component";
 import {PaymentService} from "../../../shared/services/payment.service";
 import {RouterLink} from "@angular/router";
+import {PaymentComponent} from '../../../plans/components/payment/payment.component';
+import {PlanListComponent} from '../../../plans/components/plan-list/plan-list.component';
 
 @Component({
   selector: 'app-payment-page',

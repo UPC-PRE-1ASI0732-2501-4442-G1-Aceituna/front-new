@@ -3,11 +3,11 @@ import {MatCardImage} from "@angular/material/card";
 import {RatingModule} from "primeng/rating";
 import {NgIf, UpperCasePipe} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {Vehicle} from "../../../movilizing/model/vehicle.entity";
-import {VehicleService} from "../../../movilizing/services/vehicle.service";
 import {LogoApiService} from "../../../shared/services/logo-api.service";
 import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
 import {HeaderComponent} from "../../components/header/header.component";
+import {Vehicle} from '../../../vehicles/model/vehicle.entity';
+import {VehicleService} from '../../../vehicles/services/vehicle.service';
 
 @Component({
   selector: 'app-vehicle-details-acquirer',

@@ -1,11 +1,11 @@
 import {Component, inject} from '@angular/core';
-import {PlanesApiService} from "../../../SelectionPlanes/services/planes-api.service";
-import {Plan} from "../../../SelectionPlanes/model/plan";
-import {PlanListComponent} from "../../../SelectionPlanes/components/plan-list/plan-list.component";
 import {MatCard, MatCardContent, MatCardHeader} from "@angular/material/card";
-import {PaymentComponent} from "../../../SelectionPlanes/components/payment/payment.component";
 import {NgIf} from "@angular/common";
 import {HeaderComponent} from "../../components/header/header.component";
+import {PlanListComponent} from '../../../plans/components/plan-list/plan-list.component';
+import {PaymentComponent} from '../../../plans/components/payment/payment.component';
+import {Plan} from '../../../plans/model/plan';
+import {PlanesApiService} from '../../../plans/services/planes-api.service';
 
 @Component({
   selector: 'app-planes-page',

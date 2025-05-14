@@ -9,7 +9,7 @@ import {TranslateModule} from "@ngx-translate/core";
 import {HeaderAcquirerComponent} from '../../../../public/components/header-acquirer/header-acquirer.component';
 import {UserService} from '../../../../auth/services/user.service';
 import {AuthenticationService} from '../../../../auth/services/authentication.service';
-import {LogoApiService} from '../../../../../shared/services/logo-api.service';
+import {LogoApiService} from '../../../../shared/services/logo-api.service';
 
 @Component({
   selector: 'app-profile-acquirer',
