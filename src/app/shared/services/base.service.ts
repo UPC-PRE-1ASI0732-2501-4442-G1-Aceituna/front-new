@@ -1,8 +1,8 @@
+import {environment} from "../../../environments/environment";
 import {HttpClient, HttpErrorResponse, HttpHeaders} from
     "@angular/common/http";
 import {catchError, Observable, retry, throwError} from "rxjs";
 import {inject} from "@angular/core";
-import {environment} from '../../environments/environment';
 /**
  * Base service class for CRUD operations
  * @description
