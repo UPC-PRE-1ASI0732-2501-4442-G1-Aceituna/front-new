@@ -9,7 +9,7 @@ import {HeaderAcquirerComponent} from "../../../public/components/header-acquire
 import {HeaderComponent} from "../../../public/components/header/header.component";
 import {TranslateModule} from "@ngx-translate/core";
 import {ActivatedRoute} from "@angular/router";
-import {LogoApiService} from '../../../../shared/services/logo-api.service';
+import {LogoApiService} from '../../../shared/services/logo-api.service';
 
 @Component({
   selector: 'app-vehicle-details-acquirer',

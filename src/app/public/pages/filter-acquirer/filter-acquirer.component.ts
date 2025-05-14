@@ -1,16 +1,13 @@
 import { Component, inject, OnInit } from '@angular/core';
-
+import { Vehicle } from '../../../movilizing/model/vehicle.entity';
+import { VehicleService } from '../../../movilizing/services/vehicle.service';
+import { LogoApiService } from '../../../shared/services/logo-api.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import {NgForOf, NgIf} from '@angular/common';
+import { NgForOf } from '@angular/common';
 import { MatSelectModule } from '@angular/material/select';
-import {TranslateModule} from "@ngx-translate/core";
-import {RouterLink} from "@angular/router";
-import {Vehicle} from '../../../../vehicles/model/vehicle.entity';
-import {VehicleService} from '../../../../vehicles/services/vehicle.service';
-import {HeaderAcquirerComponent} from '../../../../public/components/header-acquirer/header-acquirer.component';
-import {HeaderComponent} from '../../../../public/components/header/header.component';
-import {LogoApiService} from '../../../../shared/services/logo-api.service';
+import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
+
 @Component({
   selector: 'app-filter-acquirer',
   standalone: true,
@@ -19,12 +16,7 @@ import {LogoApiService} from '../../../../shared/services/logo-api.service';
     MatCardModule,
     MatButtonModule,
     MatSelectModule,
-    TranslateModule,
-    HeaderAcquirerComponent,
-    HeaderComponent,
-    NgIf,
-    RouterLink
-
+    HeaderAcquirerComponent
   ],
   templateUrl: './filter-acquirer.component.html',
   styleUrls: ['./filter-acquirer.component.css']
@@ -57,33 +49,12 @@ export class FilterAcquirerComponent implements OnInit {
   // Función para filtrar por tipo de vehículo
   onTypeChange(type: string) {
     this.selectedType = type;
-
-    if (type === 'All types') {
-      this.getAllVehicles();
-    } else {
-      this.vehicleService.getByType(type).subscribe({
-        next: (response: Vehicle[]) => {
-          this.vehicleData = response;
-        },
-        error: (err) => {
-          if (err.status === 404) {
-            this.vehicleData = []; // Trigger the 'no vehicles available' template
-          } else {
-            console.error('Error fetching vehicles by type:', err);
-          }
-        }
-      });
-    }
+    // Aquí puedes agregar lógica para filtrar la lista de vehículos por tipo
   }
 
   // Función para ordenar por precio
   onPriceChange(price: string) {
     this.selectedPrice = price;
-
-    if (price === 'Lowest to Highest') {
-      this.vehicleData.sort((a, b) => a.priceSell - b.priceSell);
-    } else {
-      this.vehicleData.sort((a, b) => b.priceSell - a.priceSell);
-    }
+    // Aquí puedes agregar lógica para ordenar la lista de vehículos por precio
   }
 }

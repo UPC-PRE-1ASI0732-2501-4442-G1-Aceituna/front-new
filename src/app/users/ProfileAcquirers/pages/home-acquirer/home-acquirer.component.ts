@@ -7,7 +7,7 @@ import {HeaderAcquirerComponent} from '../../../../public/components/header-acqu
 import {HeaderComponent} from '../../../../public/components/header/header.component';
 import {Vehicle} from '../../../../vehicles/model/vehicle.entity';
 import {VehicleService} from '../../../../vehicles/services/vehicle.service';
-import {LogoApiService} from '../../../../../shared/services/logo-api.service';
+import {LogoApiService} from '../../../../shared/services/logo-api.service';
 
 
 @Component({
