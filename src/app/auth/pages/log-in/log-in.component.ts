@@ -4,8 +4,9 @@ import {TranslateModule} from "@ngx-translate/core";
 import {FormsModule} from "@angular/forms";
 import {AuthenticationService} from "../../services/authentication.service";
 import {SignInRequest} from "../../model/sign-in.request";
-import {ProfileApiService} from "../../../ProfileAcquirers/services/profile-api.service";
-import {ProfileAccountService} from "../../../ProfileAcquirers/services/profile-account.service";
+import {ProfileApiService} from '../../../users/ProfileAcquirers/services/profile-api.service';
+import {ProfileAccountService} from '../../../users/ProfileAcquirers/services/profile-account.service';
+
 
 @Component({
   selector: 'app-log-in',

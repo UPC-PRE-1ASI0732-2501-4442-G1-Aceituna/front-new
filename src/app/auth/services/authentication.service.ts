@@ -4,10 +4,9 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {BehaviorSubject, Observable, tap} from "rxjs";
 import {Router} from "@angular/router";
 import {SignUpRequest} from "../model/sign-up.request";
-import {SignUpResponse} from "../model/sign-up.response";
 import {SignInRequest} from "../model/sign-in.request";
 import {SignInResponse} from "../model/sign-in.response";
-import {ProfileApiService} from "../../ProfileAcquirers/services/profile-api.service";
+import {ProfileApiService} from '../../users/ProfileAcquirers/services/profile-api.service';
 
 @Injectable({providedIn: 'root'})
 export class AuthenticationService {
