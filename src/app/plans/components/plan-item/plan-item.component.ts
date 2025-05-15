@@ -2,13 +2,9 @@ import {Component, inject, Input } from '@angular/core';
 import {Plan} from "../../model/plan";
 import {
   MatCard,
-  MatCardActions,
   MatCardContent,
-  MatCardFooter,
   MatCardHeader,
-  MatCardImage
 } from "@angular/material/card";
-import {MatIcon} from "@angular/material/icon";
 import {MatFabAnchor} from "@angular/material/button";
 import {Router, RouterLink} from "@angular/router";
 import {PaymentService} from "../../../shared/services/payment.service";
@@ -20,12 +16,8 @@ import {PaymentService} from "../../../shared/services/payment.service";
     MatCard,
     MatCardHeader,
     MatCardContent,
-    MatCardImage,
-    MatCardActions,
-    MatIcon,
     MatFabAnchor,
     RouterLink,
-    MatCardFooter
   ],
   templateUrl: './plan-item.component.html',
   styleUrl: './plan-item.component.css'

@@ -2,9 +2,6 @@ import {Component, inject} from '@angular/core';
 import {PlanesApiService} from "../../services/planes-api.service";
 import {Plan} from "../../model/plan";
 import {PlanListComponent} from "../../components/plan-list/plan-list.component";
-import {MatCard, MatCardContent, MatCardHeader} from "@angular/material/card";
-import {PaymentComponent} from "../../components/payment/payment.component";
-import {NgIf} from "@angular/common";
 import {HeaderComponent} from "../../../public/components/header/header.component";
 import {TranslateModule} from "@ngx-translate/core";
 
@@ -13,11 +10,6 @@ import {TranslateModule} from "@ngx-translate/core";
   standalone: true,
     imports: [
         PlanListComponent,
-        MatCard,
-        MatCardContent,
-        MatCardHeader,
-        NgIf,
-        PaymentComponent,
         TranslateModule,
         HeaderComponent
     ],

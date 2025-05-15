@@ -6,7 +6,6 @@ import {MatCardImage} from "@angular/material/card";
 import {RouterLink} from "@angular/router";
 import {HeaderComponent} from "../../../public/components/header/header.component";
 import {TranslateModule} from "@ngx-translate/core";
-import {HeaderAcquirerComponent} from "../../../public/components/header-acquirer/header-acquirer.component";
 import {LogoApiService} from '../../../shared/services/logo-api.service';
 
 @Component({
@@ -17,8 +16,7 @@ import {LogoApiService} from '../../../shared/services/logo-api.service';
     MatCardImage,
     RouterLink,
     TranslateModule,
-    HeaderComponent,
-    HeaderAcquirerComponent
+    HeaderComponent
   ],
   templateUrl: './vehicles.component.html',
   styleUrl: './vehicles.component.css'

@@ -1,29 +1,21 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {MatCardImage} from "@angular/material/card";
-import {NgForOf, NgIf} from "@angular/common";
+import {NgIf} from "@angular/common";
 import {Vehicle} from "../../model/vehicle.entity";
 import {VehicleService} from "../../services/vehicle.service";
-import {FormsModule} from "@angular/forms";
-import {MatMenuItem} from "@angular/material/menu";
-import {Router, RouterLink} from "@angular/router";
+import {FormsModule} from "@angular/forms"
+import {Router} from "@angular/router";
 import {HeaderComponent} from "../../../public/components/header/header.component";
 import {TranslateModule} from "@ngx-translate/core";
-import {HeaderAcquirerComponent} from "../../../public/components/header-acquirer/header-acquirer.component";
 import {LogoApiService} from '../../../shared/services/logo-api.service';
 
 @Component({
   selector: 'app-vehicle-post',
   standalone: true,
   imports: [
-    MatCardImage,
-    NgForOf,
     FormsModule,
     NgIf,
-    MatMenuItem,
-    RouterLink,
     TranslateModule,
-    HeaderComponent,
-    HeaderAcquirerComponent
+    HeaderComponent
   ],
   templateUrl: './vehicle-post.component.html',
   styleUrl: './vehicle-post.component.css'

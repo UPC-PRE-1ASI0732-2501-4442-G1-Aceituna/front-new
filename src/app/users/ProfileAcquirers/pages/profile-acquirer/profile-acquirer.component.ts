@@ -1,6 +1,5 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {NgIf, NgOptimizedImage} from "@angular/common";
-
+import {NgIf} from "@angular/common";
 import { MatCard, MatCardActions, MatCardAvatar, MatCardContent, MatCardHeader, MatCardTitle, MatCardSubtitle } from "@angular/material/card";
 import {MatButton} from "@angular/material/button";
 import {MatCheckbox} from "@angular/material/checkbox";
@@ -16,7 +15,6 @@ import {LogoApiService} from '../../../../shared/services/logo-api.service';
   standalone: true,
   imports: [
     NgIf,
-    NgOptimizedImage,
     MatCard,
     MatCardHeader,
     MatCardContent,

@@ -1,11 +1,9 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {MatCardImage} from "@angular/material/card";
 import {RatingModule} from "primeng/rating";
-import {NgIf, UpperCasePipe} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {Vehicle} from "../../model/vehicle.entity";
 import {VehicleService} from "../../services/vehicle.service";
-import {HeaderAcquirerComponent} from "../../../public/components/header-acquirer/header-acquirer.component";
 import {HeaderComponent} from "../../../public/components/header/header.component";
 import {TranslateModule} from "@ngx-translate/core";
 import {ActivatedRoute} from "@angular/router";
@@ -16,12 +14,9 @@ import {LogoApiService} from '../../../shared/services/logo-api.service';
   standalone: true,
   imports: [
     FormsModule,
-    NgIf,
     ReactiveFormsModule,
     MatCardImage,
     RatingModule,
-    UpperCasePipe,
-    HeaderAcquirerComponent,
     HeaderComponent,
     TranslateModule
   ],

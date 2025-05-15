@@ -18,7 +18,10 @@ import {RegisterAcquirerComponent} from './public/pages/register-acquirer/regist
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatMenu, MatMenuItem, MatButton, MatMenuTrigger, NgIf, HeaderComponent, HeaderAcquirerComponent, VehiclesComponent, VehiclePostComponent, InteractiveMapComponent, VehicleDetailsComponent, PlanesPageComponent, LogInComponent, RegisterUniversityStudentComponent, RegisterAcquirerComponent],
+  imports: [RouterOutlet, MatMenu, MatMenuItem, MatButton, MatMenuTrigger, NgIf,
+    HeaderComponent, HeaderAcquirerComponent, VehiclesComponent, VehiclePostComponent,
+    InteractiveMapComponent, VehicleDetailsComponent, PlanesPageComponent, LogInComponent,
+    RegisterUniversityStudentComponent, RegisterAcquirerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -54,4 +57,3 @@ export class AppComponent implements OnInit {
     this.menuOpen = !this.menuOpen;
   }
 }
-
