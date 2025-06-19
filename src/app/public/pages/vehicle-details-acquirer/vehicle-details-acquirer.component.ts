@@ -8,6 +8,7 @@ import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-a
 import {HeaderComponent} from "../../components/header/header.component";
 import {Vehicle} from '../../../vehicles/model/vehicle.entity';
 import {VehicleService} from '../../../vehicles/services/vehicle.service';
+import { API_CONFIG } from '../../../shared/config/api-config';
 
 @Component({
   selector: 'app-vehicle-details-acquirer',
@@ -52,7 +53,7 @@ export class VehicleDetailsAcquirerComponent implements OnInit{
     });
   }
   redirectToWhatsApp() {
-    const whatsappUrl = 'https://wa.me/51934893731?text=Hello%20I%20am%20interested%20in%20your%20vehicle';
+    const whatsappUrl = API_CONFIG.EXTERNAL_URLS.WHATSAPP;
     window.open(whatsappUrl, '_blank');
   }
 }

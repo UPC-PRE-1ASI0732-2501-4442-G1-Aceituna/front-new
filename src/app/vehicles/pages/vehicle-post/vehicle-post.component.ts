@@ -7,6 +7,7 @@ import {Router} from "@angular/router";
 import {HeaderComponent} from "../../../public/components/header/header.component";
 import {TranslateModule} from "@ngx-translate/core";
 import {LogoApiService} from '../../../shared/services/logo-api.service';
+import { API_CONFIG } from '../../../shared/config/api-config';
 
 @Component({
   selector: 'app-vehicle-post',
@@ -70,7 +71,7 @@ export class VehiclePostComponent implements OnInit {
       this.getCurrentLocation().then((coords) => {
         this.newVehicle.lat = coords.lat;
         this.newVehicle.lng = coords.lng;
-        this.newVehicle.imageUrl = this.newVehicle.imageUrl || 'https://www.oxfordstore.pe/media/catalog/product/cache/aae873136fa0fde5dba4b938a53c66f6/b/d/bd2979_sierra_29_negro_2021_01.jpg';
+        this.newVehicle.imageUrl = this.newVehicle.imageUrl || API_CONFIG.EXTERNAL_URLS.DEFAULT_IMAGE;
         this.vehicleService.create(this.newVehicle).subscribe({
           next: (response: any) => {
             this.vehicleData = [...this.vehicleData, response];

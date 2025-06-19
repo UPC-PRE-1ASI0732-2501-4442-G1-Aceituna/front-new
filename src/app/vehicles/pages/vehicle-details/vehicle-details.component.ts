@@ -8,6 +8,7 @@ import {RatingModule} from "primeng/rating";
 import {HeaderComponent} from "../../../public/components/header/header.component";
 import {TranslateModule} from "@ngx-translate/core";
 import {LogoApiService} from '../../../shared/services/logo-api.service';
+import { API_CONFIG } from '../../../shared/config/api-config';
 
 @Component({
   selector: 'app-vehicle-details',
@@ -51,7 +52,7 @@ export class VehicleDetailsComponent implements OnInit{
     });
   }
   redirectToWhatsApp() {
-    const whatsappUrl = 'https://wa.me/51934893731?text=Hello%20I%20am%20interested%20in%20your%20vehicle';
+    const whatsappUrl = API_CONFIG.EXTERNAL_URLS.WHATSAPP;
     window.open(whatsappUrl, '_blank');
   }
 

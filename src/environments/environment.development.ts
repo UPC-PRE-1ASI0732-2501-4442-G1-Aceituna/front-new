@@ -4,8 +4,10 @@
 // Note: In real scenarios, this file is not committed to the source
 //control.
 
+import { API_CONFIG } from '../app/shared/config/api-config';
+
 export const environment = {
-  production: true,
-  serverBasePath: 'https://app-250421124000.azurewebsites.net/api/v1',
+  production: false,
+  serverBasePath: API_CONFIG.BASE_URL,
   keyGoogle:'AIzaSyDMV3i8LKs4cJYqnT0I_hwv-mw_u55x4VE'
 };
