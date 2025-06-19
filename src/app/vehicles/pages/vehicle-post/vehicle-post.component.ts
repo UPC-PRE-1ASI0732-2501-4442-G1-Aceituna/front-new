@@ -1,12 +1,12 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {NgIf} from "@angular/common";
-import {Vehicle} from "../../model/vehicle.entity";
-import {VehicleService} from "../../services/vehicle.service";
-import {FormsModule} from "@angular/forms"
-import {Router} from "@angular/router";
-import {HeaderComponent} from "../../../public/components/header/header.component";
-import {TranslateModule} from "@ngx-translate/core";
-import {LogoApiService} from '../../../shared/services/logo-api.service';
+import { Component, inject, OnInit } from '@angular/core';
+import { NgIf } from "@angular/common";
+import { Vehicle } from "../../model/vehicle.entity";
+import { VehicleService } from "../../services/vehicle.service";
+import { FormsModule } from "@angular/forms"
+import { Router } from "@angular/router";
+import { HeaderComponent } from "../../../public/components/header/header.component";
+import { TranslateModule } from "@ngx-translate/core";
+import { LogoApiService } from '../../../shared/services/logo-api.service';
 import { API_CONFIG } from '../../../shared/config/api-config';
 
 @Component({
@@ -30,9 +30,9 @@ export class VehiclePostComponent implements OnInit {
   private router = inject(Router);
 
   options = [
-    {path: '/myVehicles', title: 'My Vehicles'}]
+    { path: '/myVehicles', title: 'My Vehicles' }]
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.getAllVehicles();

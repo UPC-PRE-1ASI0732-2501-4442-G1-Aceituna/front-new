@@ -1,13 +1,13 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {MatCardImage} from "@angular/material/card";
-import {RatingModule} from "primeng/rating";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {Vehicle} from "../../model/vehicle.entity";
-import {VehicleService} from "../../services/vehicle.service";
-import {HeaderComponent} from "../../../public/components/header/header.component";
-import {TranslateModule} from "@ngx-translate/core";
-import {ActivatedRoute} from "@angular/router";
-import {LogoApiService} from '../../../shared/services/logo-api.service';
+import { Component, inject, OnInit } from '@angular/core';
+import { MatCardImage } from "@angular/material/card";
+import { RatingModule } from "primeng/rating";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { Vehicle } from "../../model/vehicle.entity";
+import { VehicleService } from "../../services/vehicle.service";
+import { HeaderComponent } from "../../../public/components/header/header.component";
+import { TranslateModule } from "@ngx-translate/core";
+import { ActivatedRoute } from "@angular/router";
+import { LogoApiService } from '../../../shared/services/logo-api.service';
 import { API_CONFIG } from '../../../shared/config/api-config';
 
 @Component({
@@ -24,7 +24,7 @@ import { API_CONFIG } from '../../../shared/config/api-config';
   templateUrl: './vehicle-details-acquirer.component.html',
   styleUrl: './vehicle-details-acquirer.component.css'
 })
-export class VehicleDetailsAcquirerComponent implements OnInit{
+export class VehicleDetailsAcquirerComponent implements OnInit {
   protected vehicleData: Vehicle | null = null;
   private vehicleService: VehicleService = inject(VehicleService);
   private route = inject(ActivatedRoute);

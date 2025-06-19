@@ -1,13 +1,13 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {UpperCasePipe} from "@angular/common";
-import {Vehicle} from "../../model/vehicle.entity";
+import { Component, inject, OnInit } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { UpperCasePipe } from "@angular/common";
+import { Vehicle } from "../../model/vehicle.entity";
 import { VehicleService } from '../../services/vehicle.service';
-import {MatCardImage} from "@angular/material/card";
-import {RatingModule} from "primeng/rating";
-import {HeaderComponent} from "../../../public/components/header/header.component";
-import {TranslateModule} from "@ngx-translate/core";
-import {LogoApiService} from '../../../shared/services/logo-api.service';
+import { MatCardImage } from "@angular/material/card";
+import { RatingModule } from "primeng/rating";
+import { HeaderComponent } from "../../../public/components/header/header.component";
+import { TranslateModule } from "@ngx-translate/core";
+import { LogoApiService } from '../../../shared/services/logo-api.service';
 import { API_CONFIG } from '../../../shared/config/api-config';
 
 @Component({
@@ -25,7 +25,7 @@ import { API_CONFIG } from '../../../shared/config/api-config';
   templateUrl: './vehicle-details.component.html',
   styleUrl: './vehicle-details.component.css'
 })
-export class VehicleDetailsComponent implements OnInit{
+export class VehicleDetailsComponent implements OnInit {
   protected vehicleData: Vehicle | null = null;
   private vehicleService: VehicleService = inject(VehicleService);
   private Logo = inject(LogoApiService);

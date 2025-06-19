@@ -1,10 +1,10 @@
 export const API_CONFIG = {
   // URL base para el backend de Azure (producción)
-  AZURE_BASE_URL: 'https://app-250421124000.azurewebsites.net/api/v1',
-  
+  AZURE_BASE_URL: 'http://localhost:8082/api/v1',
+
   // URL alternativa para testing local (descomenta cuando hagas pruebas locales)
   // LOCAL_BASE_URL: 'http://localhost:3000/api/v1',
-  
+
   // URL activa (cambia entre AZURE_BASE_URL y LOCAL_BASE_URL según necesites)
   get BASE_URL() {
     return this.AZURE_BASE_URL;
@@ -16,11 +16,11 @@ export const API_CONFIG = {
     MAPS_API_URL: 'https://maps.googleapis.com/maps/api/js',
     FONTS_URL: 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap',
     ICONS_URL: 'https://fonts.googleapis.com/icon?family=Material+Icons',
-    
+
     // Google Maps API Keys (diferentes para cada ambiente)
-    MAPS_API_KEY_PRODUCTION: 'AIzaSyDVjw97Z_7fg3Dvz41SaAVD4jSoBeugLD8', // Key del index.html
-    MAPS_API_KEY_DEVELOPMENT: 'AIzaSyDMV3i8LKs4cJYqnT0I_hwv-mw_u55x4VE', // Key del environment.development
-    
+    MAPS_API_KEY_PRODUCTION: 'AIzaSyDmujZ9vQUmWZriYf8I7saamNfNHgHfwXI', // Clave actual que funciona
+    MAPS_API_KEY_DEVELOPMENT: 'AIzaSyDVjw97Z_7fg3Dvz41SaAVD4jSoBeugLD8', // Clave alternativa para desarrollo
+
     // Key activa (puedes cambiar entre las dos según el ambiente)
     get ACTIVE_MAPS_KEY() {
       return this.MAPS_API_KEY_PRODUCTION;

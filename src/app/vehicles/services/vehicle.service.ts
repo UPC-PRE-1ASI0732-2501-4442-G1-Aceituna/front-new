@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Vehicle} from "../model/vehicle.entity";
-import {BaseService} from '../../shared/services/base.service';
+import { Vehicle } from "../model/vehicle.entity";
+import { BaseService } from '../../shared/services/base.service';
 import { API_CONFIG } from '../../shared/config/api-config';
 
 @Injectable({

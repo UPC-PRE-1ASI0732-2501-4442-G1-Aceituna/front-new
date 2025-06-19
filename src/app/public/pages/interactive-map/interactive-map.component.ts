@@ -23,11 +23,8 @@ export class InteractiveMapComponent implements OnInit {
   private vehicleService: VehicleService = inject(VehicleService);
   private router: Router = inject(Router);
 
-
-
   ngOnInit() {
     this.loadMarkers();
-
   }
 
   moveMap(event: google.maps.MapMouseEvent) {
