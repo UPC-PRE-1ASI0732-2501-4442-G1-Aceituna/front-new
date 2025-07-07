@@ -19,7 +19,7 @@ export const API_CONFIG = {
 
     // Google Maps API Keys (diferentes para cada ambiente)
     MAPS_API_KEY_PRODUCTION: 'AIzaSyDmujZ9vQUmWZriYf8I7saamNfNHgHfwXI', // Clave actual que funciona
-    MAPS_API_KEY_DEVELOPMENT: 'AIzaSyDVjw97Z_7fg3Dvz41SaAVD4jSoBeugLD8', // Clave alternativa para desarrollo
+    MAPS_API_KEY_DEVELOPMENT: 'AIzaSyDmujZ9vQUmWZriYf8I7saamNfNHgHfwXI', // Clave alternativa para desarrollo
 
     // Key activa (puedes cambiar entre las dos según el ambiente)
     get ACTIVE_MAPS_KEY() {

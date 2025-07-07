@@ -24,6 +24,7 @@ import { API_CONFIG } from '../../../shared/config/api-config';
 export class VehiclePostComponent implements OnInit {
   protected vehicleData: Vehicle[] = [];
   public newVehicle: Vehicle = new Vehicle({}); // Initialize the object here
+  public showImagePreview: boolean = false;
 
   private vehicleService: VehicleService = inject(VehicleService);
   private Logo = inject(LogoApiService);
@@ -71,7 +72,18 @@ export class VehiclePostComponent implements OnInit {
       this.getCurrentLocation().then((coords) => {
         this.newVehicle.lat = coords.lat;
         this.newVehicle.lng = coords.lng;
-        this.newVehicle.imageUrl = this.newVehicle.imageUrl || API_CONFIG.EXTERNAL_URLS.DEFAULT_IMAGE;
+        
+        // Si no se proporciona una URL de imagen, usar la imagen por defecto
+        if (!this.newVehicle.imageUrl || this.newVehicle.imageUrl.trim() === '') {
+          this.newVehicle.imageUrl = API_CONFIG.EXTERNAL_URLS.DEFAULT_IMAGE;
+        } else {
+          // Validar que la URL tenga un formato básico válido
+          if (!this.isValidUrl(this.newVehicle.imageUrl)) {
+            console.warn('URL de imagen no válida, usando imagen por defecto');
+            this.newVehicle.imageUrl = API_CONFIG.EXTERNAL_URLS.DEFAULT_IMAGE;
+          }
+        }
+        
         this.vehicleService.create(this.newVehicle).subscribe({
           next: (response: any) => {
             this.vehicleData = [...this.vehicleData, response];
@@ -86,5 +98,34 @@ export class VehiclePostComponent implements OnInit {
         console.error('Error al obtener la ubicación: ', error);
       });
     }
+  }
+
+  private isValidUrl(urlString: string): boolean {
+    try {
+      const url = new URL(urlString);
+      return url.protocol === 'http:' || url.protocol === 'https:';
+    } catch {
+      return false;
+    }
+  }
+
+  public onImageUrlChange(): void {
+    if (this.newVehicle.imageUrl && this.newVehicle.imageUrl.trim() !== '') {
+      // Mostrar vista previa solo si la URL parece válida
+      this.showImagePreview = this.isValidUrl(this.newVehicle.imageUrl);
+    } else {
+      this.showImagePreview = false;
+    }
+  }
+
+  public onImageLoad(): void {
+    // La imagen se cargó correctamente
+    this.showImagePreview = true;
+  }
+
+  public onImageError(): void {
+    // Error al cargar la imagen
+    this.showImagePreview = false;
+    console.warn('Error al cargar la imagen de vista previa');
   }
 }

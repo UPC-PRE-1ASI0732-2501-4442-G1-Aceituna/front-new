@@ -54,6 +54,8 @@
   "name": "Nombre",
   "phone": "Telefono",
   "description": "Descripcion",
-  "rental_price": "precio de renta"
+  "rental_price": "precio de renta",
+  "image_url": "URL de la imagen",
+  "image_url_help": "Ingresa el enlace de la imagen del vehículo (opcional)"
 
 }

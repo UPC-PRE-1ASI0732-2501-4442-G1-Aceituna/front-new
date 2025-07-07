@@ -54,6 +54,8 @@
   "sign_up": "Sign Up",
   "name": "Name",
   "phone": "Phone",
-  "rental_price": "Rental Price"
+  "rental_price": "Rental Price",
+  "image_url": "Image URL",
+  "image_url_help": "Enter the vehicle image link (optional)"
 
 }
