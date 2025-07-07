@@ -7,6 +7,7 @@ import {RouterLink} from "@angular/router";
 import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
 import {Vehicle} from '../../../vehicles/model/vehicle.entity';
 import {VehicleService} from '../../../vehicles/services/vehicle.service';
+import {FooterComponent} from "../../../shared/components/footer/footer.component";
 
 @Component({
   selector: 'app-home-acquirer',
@@ -16,7 +17,8 @@ import {VehicleService} from '../../../vehicles/services/vehicle.service';
     MatCardImage,
     NgForOf,
     HeaderAcquirerComponent,
-    RouterLink
+    RouterLink,
+    FooterComponent
   ],
   templateUrl: './home-acquirer.component.html',
   styleUrl: './home-acquirer.component.css'

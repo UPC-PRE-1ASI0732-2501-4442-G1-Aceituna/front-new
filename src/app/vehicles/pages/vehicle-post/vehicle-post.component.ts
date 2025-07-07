@@ -8,6 +8,7 @@ import { HeaderComponent } from "../../../public/components/header/header.compon
 import { TranslateModule } from "@ngx-translate/core";
 import { LogoApiService } from '../../../shared/services/logo-api.service';
 import { API_CONFIG } from '../../../shared/config/api-config';
+import { FooterComponent } from '../../../shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-vehicle-post',
@@ -16,7 +17,8 @@ import { API_CONFIG } from '../../../shared/config/api-config';
     FormsModule,
     NgIf,
     TranslateModule,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   templateUrl: './vehicle-post.component.html',
   styleUrl: './vehicle-post.component.css'
