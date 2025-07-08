@@ -60,6 +60,15 @@
                 <p class="text-green-600 font-bold">${{ vehicle.priceSell }}</p>
               </div>
             </div>
+            
+            <!-- Details Button -->
+            <button 
+              [routerLink]="['/vehicleDetails']"
+              [queryParams]="{id: vehicle.id}"
+              class="mt-3 w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300"
+            >
+              Ver Detalles
+            </button>
           </div>
         </div>
       </div>

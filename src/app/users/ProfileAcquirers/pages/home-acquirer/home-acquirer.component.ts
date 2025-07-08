@@ -36,10 +36,6 @@ export class HomeAcquirerComponent implements OnInit{
     this.getAllVehicles();
   }
 
-  public redirectToVehicleDetails(vehicleId: number): void {
-    console.log('Redirecting to vehicle ID:', vehicleId);
-  }
-
   private getAllVehicles() {
     this.vehicleService.getAll().subscribe((response: any[]) => {
       console.log('Vehículos cargados:', response);
