@@ -1,9 +1,43 @@
 <app-header></app-header>
 
-<div class = "page page container mx-auto px-4 py-3 flex items-center justify-center">
-  <div class="columna columna-mayor">
-    <div class="title text-4xl mr-auto font-bold text-customGreen"  style="margin-left: 40px; color: #1ACD81"><h2>{{ 'publication_plans' | translate }}</h2></div>
-    <h6  class="componente-h" style="margin-left: 40px; color: #939393">{{ 'choose_plan' | translate }}</h6>
-    <div class="componente"><app-plan-list [planes]="planes"></app-plan-list></div>
+<div class="page page container mx-auto px-4 py-3 flex items-center justify-center bg-gray-50 min-h-screen">
+  <div class="columna columna-mayor max-w-6xl w-full">
+    
+    <!-- Header section con botón de cambio -->
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+      <div>
+        <div class="title text-4xl font-bold text-green-600 mb-2" style="color: #1ACD81">
+          <h2>📋 {{ 'publication_plans' | translate }}</h2>
+        </div>
+        <h6 class="text-gray-600 text-lg" style="color: #939393">{{ 'choose_plan' | translate }}</h6>
+      </div>
+      
+      <!-- Botón para cambiar a sección comprador -->
+      <button
+        [routerLink]="'/election'"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 2.5M7 13l2.5 2.5m6-7h.01M19 21a2 2 0 100-4 2 2 0 000 4z"></path>
+        </svg>
+        <span>Ir a Comprar</span>
+      </button>
+    </div>
+
+    <!-- Plans content -->
+    <div class="componente bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-6 border border-gray-200">
+      <app-plan-list [planes]="planes"></app-plan-list>
+    </div>
+    
+    <!-- Info adicional -->
+    <div class="mt-6 p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border-l-4 border-green-500">
+      <p class="text-sm text-gray-700">
+        <span class="font-semibold text-green-600">💡 Tip:</span> 
+        Elige el plan que mejor se adapte a tus necesidades de publicación. Puedes cambiar de plan en cualquier momento.
+      </p>
+    </div>
   </div>
 </div>
+
+<!-- Footer -->
+<app-footer></app-footer>

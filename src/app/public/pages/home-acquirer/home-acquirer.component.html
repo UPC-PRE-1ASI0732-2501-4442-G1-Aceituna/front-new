@@ -1,29 +1,82 @@
-<section id="vehiclesSection">
+<section id="vehiclesSection" class="relative bg-gray-50 min-h-screen">
   <app-header-acquirer/>
-  <div class="container mx-auto px-4 sm:px-6 lg:px-28 py-6 flex-wrap items-center justify-between">
-    <div class="container mr-auto px-4.5 py-4.5 flex-wrap items-center justify-between">
-      <h1 class="text-4xl mr-auto font-bold text-customGreen">Rent or buy minor vehicles</h1>
+  
+  <!-- Fondo decorativo -->
+  <div class="absolute top-0 left-0 w-full h-full z-0">
+    <img src="assets/background.png" class="w-full h-full object-cover opacity-20" alt="fondo decorativo" />
+  </div>
+  
+  <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-6 pt-24">
+    
+    <!-- Header section con botón de cambio -->
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+      <div>
+        <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">
+          {{ 'rent_buy_vehicles' | translate }}
+        </h1>
+        <p class="text-gray-600 text-lg">{{ 'explore_vehicles' | translate }}</p>
+      </div>
+      
+      <!-- Botón para cambiar a sección vendedor -->
+      <button
+        [routerLink]="'/election'"
+        class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+        </svg>
+        <span>Ir a Vender</span>
+      </button>
     </div>
-    <div class="container mr-auto px-4.5 py-6 flex items-center justify-between">
-      <p>Explore our selection of minor vehicles available for rent or purchaase.</p>
+
+    <!-- Stats section -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div class="bg-white/90 backdrop-blur-sm rounded-lg p-4 text-center shadow-lg border border-gray-200">
+        <div class="text-2xl font-bold text-green-600">{{ vehicleData.length }}</div>
+        <div class="text-sm text-gray-600">Vehículos Disponibles</div>
+      </div>
+      <div class="bg-white/90 backdrop-blur-sm rounded-lg p-4 text-center shadow-lg border border-gray-200">
+        <div class="text-2xl font-bold text-blue-600">{{ 'rental' | translate }}</div>
+        <div class="text-sm text-gray-600">Opciones de Alquiler</div>
+      </div>
+      <div class="bg-white/90 backdrop-blur-sm rounded-lg p-4 text-center shadow-lg border border-gray-200">
+        <div class="text-2xl font-bold text-yellow-600">{{ 'sale' | translate }}</div>
+        <div class="text-sm text-gray-600">Opciones de Venta</div>
+      </div>
+      <div class="bg-white/90 backdrop-blur-sm rounded-lg p-4 text-center shadow-lg border border-gray-200">
+        <div class="text-2xl font-bold text-purple-600">24/7</div>
+        <div class="text-sm text-gray-600">Soporte</div>
+      </div>
     </div>
+
+    <!-- Vehicles grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div *ngFor="let vehicle of vehicleData" class="bg-white shadow-md rounded-lg p-4">
+      <div *ngFor="let vehicle of vehicleData" class="bg-white/95 backdrop-blur-sm shadow-xl rounded-2xl p-6 border border-gray-200 hover:shadow-2xl transition duration-300 transform hover:scale-105">
         <div class="flex flex-col items-center">
-          <span class="text-customGreen font-bold mb-2">{{ vehicle.name }}</span>
-          <img [alt]="vehicle.name"
-               [src]="getLogoUrl(vehicle.url)"
-               class="w-32 h-32 object-cover rounded-lg"
-               mat-card-image />
-          <div class="mt-2 text-center">
-            <p class="text-gray-500 rounded">{{ vehicle.description }}</p>
-            <p class="rounded text-customGreen" >Sale: ${{ vehicle.salePrice }}</p>
-            <p class="rounded text-customGreen">Rental: ${{ vehicle.rentailPrice }} / Hora</p>
+          <span class="text-green-600 font-bold text-lg mb-3">{{ vehicle.name }}</span>
+          <div class="w-32 h-32 rounded-xl overflow-hidden shadow-lg mb-4">
+            <img [alt]="vehicle.name"
+                 [src]="getLogoUrl(vehicle.imageUrl)"
+                 class="w-full h-full object-cover"
+                 mat-card-image />
+          </div>
+          <div class="mt-2 text-center space-y-2 w-full">
+            <p class="text-gray-600 text-sm">{{ vehicle.description }}</p>
+            <div class="flex justify-between items-center bg-green-50 rounded-lg p-3">
+              <div class="text-center">
+                <p class="text-xs text-gray-500">Venta</p>
+                <p class="text-green-600 font-bold">${{ vehicle.priceSell }}</p>
+              </div>
+              <div class="text-center">
+                <p class="text-xs text-gray-500">Alquiler</p>
+                <p class="text-green-600 font-bold">${{ vehicle.priceRent }}/h</p>
+              </div>
+            </div>
           </div>
           <button
-            class="mt-2 bg-customGreen hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-            [routerLink]="['/vehicles', vehicle.id]">
-            View More
+            class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg"
+            [routerLink]="['/vehicleDetailsAcquirer', vehicle.id]">
+            Ver Detalles
           </button>
         </div>
       </div>

@@ -1,16 +1,17 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {GoogleMap, MapMarker} from "@angular/google-maps";
-import {Router} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {NgForOf} from "@angular/common";
 import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
 import {TranslateModule} from "@ngx-translate/core";
 import {Vehicle} from '../../../vehicles/model/vehicle.entity';
 import {VehicleService} from '../../../vehicles/services/vehicle.service';
+import {FooterComponent} from '../../../shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-interactive-map',
   standalone: true,
-    imports: [GoogleMap, MapMarker, NgForOf, HeaderAcquirerComponent, TranslateModule],
+    imports: [GoogleMap, MapMarker, NgForOf, HeaderAcquirerComponent, TranslateModule, RouterLink, FooterComponent],
   templateUrl: './interactive-map.component.html',
   styleUrl: './interactive-map.component.css'
 })

@@ -109,15 +109,6 @@ button:last-child:hover {
   padding: 4px;
 }
 
-.stats-card {
-  transition: all 0.3s ease;
-}
-
-.stats-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
 .gradient-text {
   background: linear-gradient(135deg, #059669, #3b82f6);
   -webkit-background-clip: text;

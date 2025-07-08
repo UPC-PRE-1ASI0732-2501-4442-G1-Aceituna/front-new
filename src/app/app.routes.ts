@@ -6,6 +6,7 @@ import { VehiclePostComponent } from './vehicles/pages/vehicle-post/vehicle-post
 import {VehicleDetailsComponent} from './vehicles/pages/vehicle-details/vehicle-details.component';
 import { RegisterAcquirerComponent } from './users/ProfileAcquirers/pages/register-acquirer/register-acquirer.component';
 import {ProfilePageComponent} from './users/ProfileAcquirers/pages/profile-page/profile-page.component';
+import {ProfilePageComponent as PublicProfilePageComponent} from './public/pages/profile-page/profile-page.component';
 import {EditProfileAcquirerComponent} from './users/ProfileAcquirers/pages/edit-profile-acquirer/edit-profile-acquirer.component';
 import {ProfileAcquirerComponent} from './users/ProfileAcquirers/pages/profile-acquirer/profile-acquirer.component';
 import {VehicleDetailsAcquirerComponent} from './vehicles/pages/vehicle-details-acquirer/vehicle-details-acquirer.component';
@@ -33,13 +34,12 @@ export const routes: Routes = [
   {path: 'registerAcquirer', component: RegisterAcquirerComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'sellerProfile', component: ProfileUniversityComponent, canActivate: [authenticationGuard]},
-  {path: 'sellereditProfile', component: ProfilePageComponent, canActivate: [authenticationGuard]},
+  {path: 'sellereditProfile', component: PublicProfilePageComponent, canActivate: [authenticationGuard]},
   {path: 'dashboard', component: DashboardPageComponent,
     children:[
       {
-        path: 'plans', // Rutas hijas
-        component: ProfilePageComponent
-
+        path: 'myprofile', // Rutas hijas corregidas
+        component: ProfileUniversityComponent
       },
       {
         path: '',

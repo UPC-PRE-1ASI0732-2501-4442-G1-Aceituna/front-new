@@ -1,40 +1,80 @@
-<section id="vehiclesSection" class="relative min-h-screen">
+<section id="vehiclesSection" class="relative min-h-screen bg-gray-50">
   <app-header-acquirer></app-header-acquirer>
 
   <!-- Fondo decorativo -->
   <div class="absolute top-0 left-0 w-full h-full z-0">
-    <img src="assets/background.png" class="w-full h-full object-cover" alt="fondo decorativo" />
+    <img src="assets/background.png" class="w-full h-full object-cover opacity-30" alt="fondo decorativo" />
   </div>
 
-  <!-- Contenido principal sin restricciones de ancho -->
-  <div class="relative z-10 px-4 sm:px-6 lg:px-28 py-10">
+  <!-- Contenido principal -->
+  <div class="relative z-10 px-4 sm:px-6 lg:px-8 py-10 pt-24">
 
-    <!-- Título -->
-    <div class="mb-4">
-      <h1 class="text-3xl sm:text-4xl font-bold text-customGreen">{{ 'find_vehicles' | translate }}</h1>
+    <!-- Header section con botón de cambio -->
+    <div class="max-w-6xl mx-auto mb-8">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">
+            📍 {{ 'find_vehicles' | translate }}
+          </h1>
+          <p class="text-gray-600 text-lg">{{ 'find_nearest_place' | translate }}</p>
+        </div>
+        
+        <!-- Botón para cambiar a sección vendedor -->
+        <button
+          [routerLink]="'/election'"
+          class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+          </svg>
+          <span>Ir a Vender</span>
+        </button>
+      </div>
+
     </div>
 
-    <!-- Subtítulo -->
-    <div class="mb-6">
-      <p class="text-gray-700">{{ 'find_nearest_place' | translate }}</p>
-    </div>
-
-    <!-- Mapa a ancho completo -->
-    <!-- Contenedor del mapa sticky -->
-    <div class="w-full lg:max-w-4xl sticky top-24 mx-auto rounded-xl overflow-hidden ">
-      <google-map
-        class="w-full h-[300px] sm:h-[400px] lg:h-[500px]"
-        [center]="center"
-        [zoom]="zoom"
-        (mapClick)="moveMap($event)"
-        (mapMousemove)="move($event)">
-        <map-marker
-          *ngFor="let marker of markers"
-          [position]="marker.position"
-          (mapClick)="markerClick(marker.vehicleId)">
-        </map-marker>
-      </google-map>
+    <!-- Contenedor del mapa mejorado -->
+    <div class="max-w-6xl mx-auto">
+      <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-6 border border-gray-200">
+        <div class="mb-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <h2 class="text-xl font-bold text-gray-800">Mapa Interactivo</h2>
+          <div class="flex gap-2">
+            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+              Bicicletas
+            </span>
+            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+              Patinetes
+            </span>
+          </div>
+        </div>
+        
+        <div class="w-full rounded-xl overflow-hidden shadow-lg">
+          <google-map
+            class="w-full h-[400px] lg:h-[500px]"
+            [center]="center"
+            [zoom]="zoom"
+            (mapClick)="moveMap($event)"
+            (mapMousemove)="move($event)">
+            <map-marker
+              *ngFor="let marker of markers"
+              [position]="marker.position"
+              (mapClick)="markerClick(marker.vehicleId)">
+            </map-marker>
+          </google-map>
+        </div>
+        
+        <!-- Información adicional -->
+        <div class="mt-4 p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border-l-4 border-green-500">
+          <p class="text-sm text-gray-700">
+            <span class="font-semibold text-green-600">💡 Tip:</span> 
+            Haz clic en los marcadores para ver los detalles de cada vehículo. Los precios varían según la ubicación y disponibilidad.
+          </p>
+        </div>
+      </div>
     </div>
 
   </div>
 </section>
+
+<!-- Footer -->
+<app-footer></app-footer>

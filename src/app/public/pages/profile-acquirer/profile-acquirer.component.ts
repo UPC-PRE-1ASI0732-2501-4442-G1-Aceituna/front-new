@@ -1,12 +1,8 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {NgIf, NgOptimizedImage} from "@angular/common";
+import {NgIf, CommonModule} from "@angular/common";
 import {UserService} from "../../../auth/services/user.service";
 import {LogoApiService} from "../../../shared/services/logo-api.service";
-import { MatCard, MatCardActions, MatCardAvatar, MatCardContent, MatCardHeader, MatCardTitle, MatCardSubtitle } from "@angular/material/card";
-import {MatButton} from "@angular/material/button";
-import {MatCheckbox} from "@angular/material/checkbox";
 import {RouterLink} from "@angular/router";
-
 import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
 
 @Component({
@@ -14,16 +10,7 @@ import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-a
   standalone: true,
   imports: [
     NgIf,
-    NgOptimizedImage,
-    MatCard,
-    MatCardHeader,
-    MatCardContent,
-    MatCardActions,
-    MatCardAvatar,
-    MatCardTitle,
-    MatCardSubtitle,
-    MatButton,
-    MatCheckbox,
+    CommonModule,
     RouterLink,
     HeaderAcquirerComponent
   ],
@@ -35,10 +22,10 @@ export class ProfileAcquirerComponent implements OnInit{
   user: any = {};  // Cambiado a un solo objeto
   options = [
     {path: '/editProfileAcquirer', title: 'sellereditProfile'}
-
   ]
 
   constructor(private userService: UserService) { }
+  
   ngOnInit(): void {
     // Llamada al servicio para obtener un solo usuario
     this.userService.getUserById(1).subscribe(data => {
@@ -46,7 +33,26 @@ export class ProfileAcquirerComponent implements OnInit{
       console.log('Usuario obtenido:', this.user);
     });
   }
+  
   getLogoUrl(url: string | undefined) {
     return this.Logo.getUrlToLogo(url);
+  }
+
+  getCurrentYear(): number {
+    return new Date().getFullYear();
+  }
+
+  getProfileCompletion(): number {
+    if (!this.user) return 0;
+    
+    let completed = 0;
+    const total = 4; // name, email, phone, image
+    
+    if (this.user?.name) completed++;
+    if (this.user?.email) completed++;
+    if (this.user?.phone) completed++;
+    if (this.user?.url) completed++;
+    
+    return Math.round((completed / total) * 100);
   }
 }

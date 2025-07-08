@@ -7,6 +7,7 @@ import {RouterLink} from "@angular/router";
 import {HeaderComponent} from "../../../public/components/header/header.component";
 import {TranslateModule} from "@ngx-translate/core";
 import {LogoApiService} from '../../../shared/services/logo-api.service';
+import {FooterComponent} from "../../../shared/components/footer/footer.component";
 
 @Component({
   selector: 'app-vehicles',
@@ -16,7 +17,8 @@ import {LogoApiService} from '../../../shared/services/logo-api.service';
     MatCardImage,
     RouterLink,
     TranslateModule,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   templateUrl: './vehicles.component.html',
   styleUrl: './vehicles.component.css'

@@ -3,7 +3,7 @@ import { NgIf } from "@angular/common";
 import { Vehicle } from "../../model/vehicle.entity";
 import { VehicleService } from "../../services/vehicle.service";
 import { FormsModule } from "@angular/forms"
-import { Router } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { HeaderComponent } from "../../../public/components/header/header.component";
 import { TranslateModule } from "@ngx-translate/core";
 import { LogoApiService } from '../../../shared/services/logo-api.service';
@@ -18,7 +18,8 @@ import { FooterComponent } from '../../../shared/components/footer/footer.compon
     NgIf,
     TranslateModule,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    RouterLink
   ],
   templateUrl: './vehicle-post.component.html',
   styleUrl: './vehicle-post.component.css'
@@ -129,5 +130,21 @@ export class VehiclePostComponent implements OnInit {
     // Error al cargar la imagen
     this.showImagePreview = false;
     console.warn('Error al cargar la imagen de vista previa');
+  }
+
+  public getFormProgress(): number {
+    const requiredFields = [
+      this.newVehicle.name,
+      this.newVehicle.type,
+      this.newVehicle.year,
+      this.newVehicle.priceSell,
+      this.newVehicle.priceRent,
+      this.newVehicle.description
+    ];
+    
+    const completedFields = requiredFields.filter(field => field && field.toString().trim() !== '').length;
+    const totalFields = requiredFields.length;
+    
+    return Math.round((completedFields / totalFields) * 100);
   }
 }

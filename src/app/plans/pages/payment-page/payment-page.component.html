@@ -1,13 +1,21 @@
 
-<div class = "page">
-  <div class="columna"></div>
-  <div class="columna columna-mayor">
-    <div class="title" style="color: #1ACD81"><h2> {{ 'proceed_checkout' | translate }}</h2></div>
-    <h6  class="componente-h" >{{ 'review_purchase' | translate }}</h6>
-    <h6  class="componente-h" >{{ 'total_amount' | translate }}: {{this.paymentService.getCost()}} $</h6>
-    <div class="componente"><app-payment></app-payment></div>
-
+<div class="page bg-gray-50 min-h-screen py-8">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 border border-gray-200">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-green-600 mb-2">💳 {{ 'proceed_checkout' | translate }}</h2>
+        <p class="text-gray-600 text-lg">{{ 'review_purchase' | translate }}</p>
+        <div class="mt-4 p-4 bg-green-50 rounded-lg border border-green-200">
+          <p class="text-lg font-semibold text-green-700">{{ 'total_amount' | translate }}: ${{this.paymentService.getCost()}}</p>
+        </div>
+      </div>
+      
+      <div class="componente">
+        <app-payment></app-payment>
+      </div>
+    </div>
   </div>
 </div>
 
-
+<!-- Footer -->
+<app-footer></app-footer>

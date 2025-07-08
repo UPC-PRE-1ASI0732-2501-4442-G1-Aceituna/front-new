@@ -27,8 +27,8 @@
       <input
         class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
         type="text"
-        name="email"
-        placeholder="Email"
+        name="username"
+        placeholder="{{ 'username' | translate }}"
         [(ngModel)]="form.username"
       />
     </div>
@@ -38,7 +38,7 @@
         class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
         type="password"
         name="password"
-        placeholder="Password"
+        placeholder="{{ 'password' | translate }}"
         [(ngModel)]="form.password"
       />
     </div>

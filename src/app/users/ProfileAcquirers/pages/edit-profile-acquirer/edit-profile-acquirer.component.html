@@ -1,15 +1,158 @@
 <app-header-acquirer></app-header-acquirer>
-<div class="page container mx-auto px-4 py-3 items-center justify-center">
-  <div class="componente">
-    <div class="title text-4xl mr-auto font-bold text-customGreen" style="margin-left: 10px;">
-      <h2>{{ 'edit_profile' | translate }}</h2>
-    </div>
-    <h6 class="componente-h" style="margin-left: 10px; color: #939393;">
-      {{ 'personal_info' | translate }}
-    </h6>
 
-    <div>
-      <app-profile [profile]="user" (profileChange)="userChange($event)"></app-profile>
+<div class="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 py-8 px-4">
+  <div class="max-w-6xl mx-auto">
+    <!-- Header Section -->
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-bold text-gray-800 mb-2">
+        {{ 'edit_profile' | translate }}
+      </h1>
+      <p class="text-gray-600 text-lg">
+        {{ 'personal_info' | translate }}
+      </p>
+      
+      <!-- User Role Badge -->
+      <div class="mt-4">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+          <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M8 11v6h8v-6M8 11H5.5a1.5 1.5 0 00-1.5 1.5v8a1.5 1.5 0 001.5 1.5h13a1.5 1.5 0 001.5-1.5v-8A1.5 1.5 0 0018.5 11H16"></path>
+          </svg>
+          Comprador
+        </span>
+      </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="bg-white rounded-2xl shadow-xl p-8">
+      <!-- Quick Stats Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-gradient-to-r from-green-400 to-green-600 rounded-lg p-6 text-white">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-green-100 text-sm">Perfil completado</p>
+              <p class="text-2xl font-bold">{{ getProfileCompletion() }}%</p>
+            </div>
+            <svg class="w-8 h-8 text-green-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg p-6 text-white">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-blue-100 text-sm">Miembro desde</p>
+              <p class="text-2xl font-bold">{{ getCurrentYear() }}</p>
+            </div>
+            <svg class="w-8 h-8 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-purple-400 to-purple-600 rounded-lg p-6 text-white">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-purple-100 text-sm">Intereses guardados</p>
+              <p class="text-2xl font-bold">{{ getSavedInterests() }}</p>
+            </div>
+            <svg class="w-8 h-8 text-purple-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section Selector -->
+      <div class="mb-8 bg-gray-100 rounded-lg p-1 flex">
+        <button class="flex-1 py-3 px-4 rounded-md text-sm font-medium transition-colors bg-white text-gray-900 shadow-sm">
+          Información Personal
+        </button>
+        <button class="flex-1 py-3 px-4 rounded-md text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">
+          Preferencias
+        </button>
+        <button class="flex-1 py-3 px-4 rounded-md text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">
+          Privacidad
+        </button>
+      </div>
+
+      <!-- Profile Form Section -->
+      <div>
+        <app-profile [profile]="user" (profileChange)="userChange($event)"></app-profile>
+      </div>
+
+      <!-- Additional Features Section -->
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Buyer Preferences -->
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-6">
+          <div class="flex items-start">
+            <svg class="w-6 h-6 text-blue-600 mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v6a2 2 0 002 2h2m0 0h2m-2 0v6a2 2 0 002 2h2a2 2 0 002-2v-6m0 0V7a2 2 0 00-2-2h-2m0 0V5a2 2 0 00-2-2H9z"></path>
+            </svg>
+            <div>
+              <h4 class="font-semibold text-blue-800 mb-2">Preferencias de Compra</h4>
+              <p class="text-sm text-blue-700 mb-3">
+                Personaliza tu experiencia de búsqueda y compra de vehículos
+              </p>
+              <button class="text-blue-600 hover:text-blue-700 text-sm font-medium border border-blue-300 rounded-lg px-3 py-1 hover:bg-blue-50 transition-colors">
+                Configurar →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notifications -->
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-lg p-6">
+          <div class="flex items-start">
+            <svg class="w-6 h-6 text-green-600 mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5-5-5h5v-6h5v6z"></path>
+            </svg>
+            <div>
+              <h4 class="font-semibold text-green-800 mb-2">Notificaciones</h4>
+              <p class="text-sm text-green-700 mb-3">
+                Mantente informado sobre nuevos vehículos y ofertas especiales
+              </p>
+              <button class="text-green-600 hover:text-green-700 text-sm font-medium border border-green-300 rounded-lg px-3 py-1 hover:bg-green-50 transition-colors">
+                Gestionar →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="mt-8 bg-gray-50 rounded-lg p-6">
+        <h4 class="font-semibold text-gray-800 mb-4">Acciones Rápidas</h4>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <button class="flex flex-col items-center p-4 bg-white rounded-lg border hover:bg-gray-50 transition-colors">
+            <svg class="w-6 h-6 text-blue-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+            <span class="text-sm font-medium text-gray-800">Favoritos</span>
+          </button>
+
+          <button class="flex flex-col items-center p-4 bg-white rounded-lg border hover:bg-gray-50 transition-colors">
+            <svg class="w-6 h-6 text-green-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v6a2 2 0 002 2h2m0 0h2m-2 0v6a2 2 0 002 2h2a2 2 0 002-2v-6m0 0V7a2 2 0 00-2-2h-2m0 0V5a2 2 0 00-2-2H9z"></path>
+            </svg>
+            <span class="text-sm font-medium text-gray-800">Historial</span>
+          </button>
+
+          <button class="flex flex-col items-center p-4 bg-white rounded-lg border hover:bg-gray-50 transition-colors">
+            <svg class="w-6 h-6 text-purple-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
+            </svg>
+            <span class="text-sm font-medium text-gray-800">Filtros</span>
+          </button>
+
+          <button class="flex flex-col items-center p-4 bg-white rounded-lg border hover:bg-gray-50 transition-colors">
+            <svg class="w-6 h-6 text-orange-600 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span class="text-sm font-medium text-gray-800">Ayuda</span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

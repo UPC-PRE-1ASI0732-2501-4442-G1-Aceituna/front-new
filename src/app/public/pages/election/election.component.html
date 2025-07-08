@@ -9,40 +9,29 @@
     <div class="flex flex-col sm:flex-row justify-center gap-8">
 
       <!-- Botón Ver Planes -->
-      <button
-        [routerLink]="'/plans'"
-        mat-button
-        class="group relative w-56 min-h-[200px] bg-green-600 hover:bg-green-700 text-white rounded-xl shadow-xl transition duration-300 transform hover:scale-105 hover:shadow-2xl btn-glow flex flex-col items-center justify-center"
-      >
-        <img
-          src="assets/icons/plan.png"
-          alt="Icono planes"
-          class="w-20 h-20 mb-4 transition duration-300 group-hover:brightness-125 group-hover:scale-110 z-10 relative"
-        />
+      <button [routerLink]="'/plans'" mat-button
+        class="group relative w-56 min-h-[200px] bg-green-600 hover:bg-green-700 text-white rounded-xl shadow-xl transition duration-300 transform hover:scale-105 hover:shadow-2xl btn-glow flex flex-col items-center justify-center">
+        <img src="assets/icons/plan.png" alt="Icono planes"
+          class="w-20 h-20 mb-4 transition duration-300 group-hover:brightness-125 group-hover:scale-110 z-10 relative" />
         <span class="block font-semibold text-xl z-10 relative">Ver Planes</span>
       </button>
 
       <!-- Botón Ir al Inicio -->
-      <button
-        [routerLink]="'/home'"
-        mat-button
-        class="group relative w-56 min-h-[200px] bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-xl transition duration-300 transform hover:scale-105 hover:shadow-2xl btn-glow flex flex-col items-center justify-center"
-      >
-        <img
-          src="assets/icons/home2.png"
-          alt="Icono inicio"
-          class="w-20 h-20 mb-4 transition duration-300 group-hover:brightness-125 group-hover:scale-110 z-10 relative"
-        />
+      <button [routerLink]="'/home'" mat-button
+        class="group relative w-56 min-h-[200px] bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-xl transition duration-300 transform hover:scale-105 hover:shadow-2xl btn-glow flex flex-col items-center justify-center">
+        <img src="assets/icons/home2.png" alt="Icono inicio"
+          class="w-20 h-20 mb-4 transition duration-300 group-hover:brightness-125 group-hover:scale-110 z-10 relative" />
         <span class="block font-semibold text-xl z-10 relative">Ir al Inicio</span>
       </button>
 
     </div>
 
     <!-- Sección del Propósito de la Aplicación -->
-    <div class="mt-16 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 mx-4 border border-gray-200 purpose-section">
+    <div
+      class="mt-16 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 mx-4 border border-gray-200 purpose-section">
       <div class="text-center mb-8">
         <h2 class="text-2xl font-bold text-gray-800 mb-4 gradient-text">
-          🌱 ¡Bienvenido a EcoMovil!
+          ¡Bienvenido a EcoMovil!
         </h2>
         <p class="text-lg text-gray-600">
           Tu plataforma de movilidad sostenible
@@ -54,36 +43,45 @@
         <div class="space-y-6">
           <div class="flex items-start space-x-4 feature-card p-4 rounded-lg">
             <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center icon-glow">
-              <span class="text-2xl">🚲</span>
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
             </div>
             <div>
               <h3 class="text-lg font-semibold text-gray-800 mb-2">Movilidad Ecológica</h3>
               <p class="text-gray-600">
-                Encuentra y comparte vehículos menores como bicicletas, patinetes y monopatines para una movilidad más sostenible y económica.
+                Encuentra y comparte vehículos menores como bicicletas, patinetes y monopatines para una movilidad más
+                sostenible y económica.
               </p>
             </div>
           </div>
 
           <div class="flex items-start space-x-4 feature-card p-4 rounded-lg">
             <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center icon-glow">
-              <span class="text-2xl">💡</span>
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
             </div>
             <div>
               <h3 class="text-lg font-semibold text-gray-800 mb-2">Solución Innovadora</h3>
               <p class="text-gray-600">
-                Conectamos a personas que buscan alternativas de transporte con quienes ofrecen vehículos ecológicos para alquilar o vender.
+                Conectamos a personas que buscan alternativas de transporte con quienes ofrecen vehículos ecológicos
+                para alquilar o vender.
               </p>
             </div>
           </div>
 
           <div class="flex items-start space-x-4 feature-card p-4 rounded-lg">
             <div class="flex-shrink-0 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center icon-glow">
-              <span class="text-2xl">🌍</span>
+              <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
             </div>
             <div>
               <h3 class="text-lg font-semibold text-gray-800 mb-2">Impacto Ambiental</h3>
               <p class="text-gray-600">
-                Contribuye a reducir la contaminación y el tráfico urbano eligiendo opciones de transporte más limpias y eficientes.
+                Contribuye a reducir la contaminación y el tráfico urbano eligiendo opciones de transporte más limpias y
+                eficientes.
               </p>
             </div>
           </div>
@@ -92,7 +90,7 @@
         <!-- Lado derecho: Beneficios -->
         <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-xl p-6 border border-green-200">
           <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">¿Qué puedes hacer aquí?</h3>
-          
+
           <div class="space-y-4">
             <div class="flex items-center space-x-3 benefit-item p-2 rounded">
               <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
@@ -100,28 +98,28 @@
               </div>
               <span class="text-gray-700">Explorar vehículos disponibles en tu zona</span>
             </div>
-            
+
             <div class="flex items-center space-x-3 benefit-item p-2 rounded">
               <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
                 <span class="text-white font-bold">✓</span>
               </div>
               <span class="text-gray-700">Publicar tus propios vehículos para alquilar</span>
             </div>
-            
+
             <div class="flex items-center space-x-3 benefit-item p-2 rounded">
               <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
                 <span class="text-white font-bold">✓</span>
               </div>
               <span class="text-gray-700">Encontrar opciones de compra y venta</span>
             </div>
-            
+
             <div class="flex items-center space-x-3 benefit-item p-2 rounded">
               <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
                 <span class="text-white font-bold">✓</span>
               </div>
               <span class="text-gray-700">Ver ubicaciones en tiempo real</span>
             </div>
-            
+
             <div class="flex items-center space-x-3 benefit-item p-2 rounded">
               <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
                 <span class="text-white font-bold">✓</span>
@@ -132,30 +130,10 @@
 
           <div class="mt-6 p-4 bg-white rounded-lg border-l-4 border-green-500">
             <p class="text-sm text-gray-600">
-              <span class="font-semibold text-green-600">💚 Juntos por un futuro más verde:</span> 
+              <span class="font-semibold text-green-600">Juntos por un futuro más verde:</span>
               Cada viaje en vehículo ecológico es un paso hacia ciudades más limpias y habitables.
             </p>
           </div>
-        </div>
-      </div>
-
-      <!-- Estadísticas -->
-      <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="text-center p-4 bg-green-50 rounded-lg stats-card">
-          <div class="text-2xl font-bold text-green-600">🚲</div>
-          <div class="text-sm text-gray-600 mt-1">Vehículos<br>Ecológicos</div>
-        </div>
-        <div class="text-center p-4 bg-blue-50 rounded-lg stats-card">
-          <div class="text-2xl font-bold text-blue-600">📍</div>
-          <div class="text-sm text-gray-600 mt-1">Ubicación<br>en Tiempo Real</div>
-        </div>
-        <div class="text-center p-4 bg-yellow-50 rounded-lg stats-card">
-          <div class="text-2xl font-bold text-yellow-600">💰</div>
-          <div class="text-sm text-gray-600 mt-1">Precios<br>Accesibles</div>
-        </div>
-        <div class="text-center p-4 bg-purple-50 rounded-lg stats-card">
-          <div class="text-2xl font-bold text-purple-600">🤝</div>
-          <div class="text-sm text-gray-600 mt-1">Comunidad<br>Sostenible</div>
         </div>
       </div>
     </div>

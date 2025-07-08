@@ -1,13 +1,12 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {NgIf} from "@angular/common";
+import {NgIf, CommonModule} from "@angular/common";
 import {LogoApiService} from "../../../shared/services/logo-api.service";
-import { MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardTitle, MatCardSubtitle } from "@angular/material/card";
-import {MatButton} from "@angular/material/button";
 import {RouterLink} from "@angular/router";
 import {TranslateModule} from "@ngx-translate/core";
 import {UserService} from "../../../auth/services/user.service";
 import {AuthenticationService} from "../../../auth/services/authentication.service";
-import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-acquirer.component";
+import {HeaderComponent} from "../../components/header/header.component";
+import {FooterComponent} from "../../../shared/components/footer/footer.component";
 import {ProfileApiService} from '../../../users/ProfileAcquirers/services/profile-api.service';
 
 @Component({
@@ -15,16 +14,11 @@ import {ProfileApiService} from '../../../users/ProfileAcquirers/services/profil
   standalone: true,
   imports: [
     NgIf,
-    MatCard,
-    MatCardHeader,
-    MatCardContent,
-    MatCardActions,
-    MatCardTitle,
-    MatCardSubtitle,
-    MatButton,
+    CommonModule,
     RouterLink,
     TranslateModule,
-    HeaderAcquirerComponent
+    HeaderComponent,
+    FooterComponent
   ],
   templateUrl: './profile-university.component.html',
   styleUrl: './profile-university.component.css'
@@ -52,5 +46,23 @@ export class ProfileUniversityComponent implements OnInit {
   }
   getFirstName(fullName: string): string {
     return fullName?.split(' ')[0] || '';
+  }
+
+  getCurrentYear(): number {
+    return new Date().getFullYear();
+  }
+
+  getProfileCompletion(): number {
+    if (!this.user) return 0;
+    
+    let completed = 0;
+    const total = 4; // name, email, phone, image
+    
+    if (this.user?.fullName || this.user?.name) completed++;
+    if (this.user?.email) completed++;
+    if (this.user?.phoneNumber || this.user?.phone) completed++;
+    if (this.user?.image || this.user?.url) completed++;
+    
+    return Math.round((completed / total) * 100);
   }
 }

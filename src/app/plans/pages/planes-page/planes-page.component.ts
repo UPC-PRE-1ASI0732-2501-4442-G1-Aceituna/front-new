@@ -4,6 +4,8 @@ import {Plan} from "../../model/plan";
 import {PlanListComponent} from "../../components/plan-list/plan-list.component";
 import {HeaderComponent} from "../../../public/components/header/header.component";
 import {TranslateModule} from "@ngx-translate/core";
+import {RouterLink} from "@angular/router";
+import {FooterComponent} from "../../../shared/components/footer/footer.component";
 
 @Component({
   selector: 'app-planes-page',
@@ -11,7 +13,9 @@ import {TranslateModule} from "@ngx-translate/core";
     imports: [
         PlanListComponent,
         TranslateModule,
-        HeaderComponent
+        HeaderComponent,
+        RouterLink,
+        FooterComponent
     ],
   templateUrl: './planes-page.component.html',
   styleUrl: './planes-page.component.css'

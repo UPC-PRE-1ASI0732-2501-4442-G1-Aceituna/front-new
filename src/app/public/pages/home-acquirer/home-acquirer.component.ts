@@ -8,17 +8,18 @@ import {HeaderAcquirerComponent} from "../../components/header-acquirer/header-a
 import {Vehicle} from '../../../vehicles/model/vehicle.entity';
 import {VehicleService} from '../../../vehicles/services/vehicle.service';
 import {FooterComponent} from "../../../shared/components/footer/footer.component";
+import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-home-acquirer',
   standalone: true,
   imports: [
-    HeaderComponent,
     MatCardImage,
     NgForOf,
     HeaderAcquirerComponent,
     RouterLink,
-    FooterComponent
+    FooterComponent,
+    TranslateModule
   ],
   templateUrl: './home-acquirer.component.html',
   styleUrl: './home-acquirer.component.css'
