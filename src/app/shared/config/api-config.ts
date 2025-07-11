@@ -1,6 +1,6 @@
 export const API_CONFIG = {
   // URL base para el backend de Azure (producción)
-  AZURE_BASE_URL: 'https://app-250708224357.azurewebsites.net/api/v1',
+  AZURE_BASE_URL: 'https://app-250710215438.azurewebsites.net/api/v1',
   //AZURE_BASE_URL: 'http://localhost:8082/api/v1',
 
 
